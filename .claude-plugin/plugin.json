@@ -1,0 +1,1 @@
+{ "name": "usage-monitor", "version": "0.1.0", "description": "Usage monitor band above the prompt: account rate limits, this session's share, tokens, cost and model.", "types": "./types/index.d.ts" }

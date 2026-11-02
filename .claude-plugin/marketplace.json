@@ -1,0 +1,5 @@
+{
+  "name": "usage-monitor",
+  "owner": { "name": "sengokusal2025" },
+  "plugins": [{ "name": "usage-monitor", "source": "./" }]
+}
