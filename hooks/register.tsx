@@ -77,6 +77,7 @@ export const register: Register = on => {
     if (e.props.hasSurvey) return next(e)
     const d = await read($, data)
     const now = await $.clock.now()
+    const cwd = (await $.session.cwd()).replace(/\\/g, '/')
     const { Box, Text } = $.ui.resolve(e)
 
     const total = d.input + d.output + d.cacheRead + d.cacheWrite
@@ -125,6 +126,10 @@ export const register: Register = on => {
           <Text>cost </Text><Text bold>${d.costUsd.toFixed(2)}</Text>
           <Text dimColor> | </Text>
           <Text>model </Text><Text color="yellow" bold>{d.model || '—'}</Text>
+        </Box>
+        <Box>
+          <Text bold>dir </Text>
+          <Text color="green">{cwd}</Text>
         </Box>
       </Box>
     )
